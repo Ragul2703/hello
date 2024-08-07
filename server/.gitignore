@@ -1,0 +1,33 @@
+# Node modules
+node_modules/
+
+# Environment files
+.env
+
+# Logs
+*.log
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional yarn cache directory
+.yarn/cache
+
+# Optional eslint cache
+.eslintcache
+
+# Optional vscode settings directory
+.vscode/
+
+# Optional build output directory
+dist/
+build/
+
+# Mac system files
+.DS_Store
+
+# Windows system files
+Thumbs.db

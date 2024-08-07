@@ -1,0 +1,19 @@
+/* Add your CSS styles here */
+
+/* Example: */
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Navbar styles */
+.navbar {
+  background: #fb873f;
+}
+
+.navbar .nav-link {
+  color: #fff !important;
+}
+
+/* Other styles from the template */
