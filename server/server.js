@@ -48,6 +48,10 @@ app.post('/logins', async (req, res) => {
   }
 });
 
+app.get('/',(req,res)=>{
+  res.send("Hello,World!);
+           });
+
 // Upload course route
 app.post('/upload', upload.fields([{ name: 'thumbnail', maxCount: 1 }, { name: 'video', maxCount: 1 }]), async (req, res) => {
   const { description } = req.body;
