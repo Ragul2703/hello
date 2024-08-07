@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Connect to MongoDB
-mongoose.connect(process.env.MongoDb, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MongoDb);
 
 const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
