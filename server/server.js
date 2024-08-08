@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Connect to MongoDB
-mongoose.connect("mongodb+srv://ragulk825:appu123%40@cluster0.zkjd1wr.mongodb.net/appuDb")
+mongoose.connect("mongodb+srv://ragulk825:appu123%40@cluster0.zkjd1wr.mongodb.net/elearnDb")
   .then(() => console.log('MongoDB connected'))
   .catch(err => {
     console.error('MongoDB connection error:', err);
