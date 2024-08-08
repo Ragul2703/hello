@@ -1,21 +1,18 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
 const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
 
-dotenv.config(); // Initialize dotenv
-
 const app = express();
-const PORT = process.env.PORT || 5000; // Default to 5000 if PORT is not set
+const PORT = 5000; // Default to 5000 if PORT is not set
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect("mongodb+srv://ragulk825:appu123%40@cluster0.zkjd1wr.mongodb.net/appuDb")
   .then(() => console.log('MongoDB connected'))
   .catch(err => {
     console.error('MongoDB connection error:', err);
