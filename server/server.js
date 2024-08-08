@@ -75,8 +75,8 @@ app.post('/upload', upload.fields([{ name: 'thumbnail', maxCount: 1 }, { name: '
   try {
     const course = new Course({
       description,
-      thumbnailUrl: `mongodb+srv://ragulk825:appu123%40@cluster0.zkjd1wr.mongodb.net/elearnDb:${PORT}/uploads/${thumbnail.filename}`,
-      videoUrl: `mongodb+srv://ragulk825:appu123%40@cluster0.zkjd1wr.mongodb.net/elearnDb:${PORT}/uploads/${video.filename}`,
+      thumbnailUrl: `mongodb+srv://ragulk825:appu123%40@cluster0.zkjd1wr.mongodb.net/elearnDb:port=5000/uploads/${thumbnail.filename}`,
+      videoUrl: `mongodb+srv://ragulk825:appu123%40@cluster0.zkjd1wr.mongodb.net/elearnDb:port=5000/uploads/${video.filename}`,
     });
 
     await course.save();
