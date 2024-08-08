@@ -33,6 +33,10 @@ app.use(cors()); // Enable CORS
 // Set up multer for file uploads
 const upload = multer({ dest: 'uploads/' });
 
+app.get("/demo",(req,res)=>{
+  res.send("DemoPage")
+})
+
 // User login route
 app.post('/logins', async (req, res) => {
   const { email, password } = req.body;
