@@ -34,7 +34,7 @@ app.use(cors()); // Enable CORS
 // const upload = multer({ dest: 'uploads/' });
 
 app.get("/demo",(req,res)=>{
-  res.send("DemoPage")
+  res.send("DemoPages")
 })
 
 // // User login route
