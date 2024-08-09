@@ -30,11 +30,6 @@ const Course = mongoose.model('Course', courseSchema);
 app.use(express.json());
 app.use(cors()); // Enable CORS
 
-app.get("/",(req,res)=>{
-  res.send("hi")
-})
-
-
 // Serve static files from uploads directory
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
