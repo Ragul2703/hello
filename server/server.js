@@ -31,7 +31,7 @@ app.use(express.json());
 app.use(cors()); // Enable CORS
 
 app.get('/hi', (req, res) => {
-  res.sendStatus(hi);
+  res.send(hi);
 });
 
 
