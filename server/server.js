@@ -8,8 +8,13 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Connect to MongoDB
-mongoose.connect(process.env.MongoDb, { useNewUrlParser: true, useUnifiedTopology: true });
+// MongoDB Connection
+const mongoURI = process.env.MongoDb || 'your-default-mongodb-uri';
+mongoose.connect(mongoURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+});
 
 const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
@@ -29,8 +34,20 @@ const Course = mongoose.model('Course', courseSchema);
 app.use(express.json());
 app.use(cors()); // Enable CORS
 
+// Serve static files from uploads directory
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 // Set up multer for file uploads
-const upload = multer({ dest: 'uploads/' });
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/');
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + '-' + file.originalname);
+  },
+});
+
+const upload = multer({ storage: storage });
 
 // User login route
 app.post('/logins', async (req, res) => {
@@ -81,8 +98,6 @@ app.get('/courses', async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 });
-
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
