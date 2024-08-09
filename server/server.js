@@ -10,11 +10,7 @@ const PORT = process.env.PORT || 5000;
 
 // MongoDB Connection
 const mongoURI = process.env.MongoDb || 'your-default-mongodb-uri';
-mongoose.connect(mongoURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-});
+mongoose.connect(mongoURI);
 
 const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
